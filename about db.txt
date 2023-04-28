@@ -24,3 +24,5 @@ Install my sql : https://dev.mysql.com/downloads/installer/
 
 for jar file : https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.28
 go to file -> project structure -> modules -> dependencies -> + -> mysql.jar
+
+after updatetion this might throw error so creating another repo
