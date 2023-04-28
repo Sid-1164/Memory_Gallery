@@ -5,9 +5,13 @@ import java.awt.event.ActionListener;
 
 //import ImgInfo.*;
 
+
 public class Main {
     public static void main(String[] args) {
         new Gallery();
+
+        // To load data to galley from database
+        new db().load();
     }
 }
 
@@ -15,6 +19,7 @@ class Gallery{
     static Container cont = new Container();
     static JButton adb = new JButton("Add Memory");
     static JFrame frame = new JFrame();
+
     public Gallery(){
         cont.setLayout(new FlowLayout(0,10,10));
         cont.setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()));
@@ -26,6 +31,8 @@ class Gallery{
         adb.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 adb.setEnabled(false);
+
+                // control goes to -> AddInfo.java
                 new AddInfo();
             }
         } );

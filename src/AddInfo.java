@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import ImgInfo.ImgInfo;
+
+
 public class AddInfo {
     JFrame infoframe ;
     JTextField path,date,loc;
@@ -88,12 +90,20 @@ public class AddInfo {
                 else{
 //                    imgb = new JButton(img);
 //                    Gallery.cont.add(imgb);
+
+                    // CREATION OF IMGinfo object named newimg
                     ImgInfo newimg = new ImgInfo(path.getText(), date.getText(), loc.getText(), info.getText());
+
+                    // All this data also stores to database
+                    new db().insert(path.getText(), date.getText(), loc.getText(), info.getText());
+
                     Gallery.cont.add(newimg.imgb);
                     Gallery.frame.repaint();
                     JOptionPane.showMessageDialog(botp2, "Saved Sucessfully");
                     infoframe.dispose();
                     Gallery.adb.setEnabled(true);
+
+                    // Calling ShowInfo
                     newimg.imgb.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent ae){
                             new ShowInfo(newimg);

@@ -1,0 +1,26 @@
+CREATE DATABASE DBMS;
+CREATE TABLE MEMGAL(
+	path varchar(255),
+    dday varchar(255),
+    location varchar(255),
+    information varchar(255)
+);
+
+
+CREATE USER 'ssa'@'localhost' IDENTIFIED BY 'projmem';
+
+GRANT ALL PRIVILEGES ON dbms.* TO 'ssa'@'localhost';
+
+FLUSH PRIVILEGES;
+
+
+SELECT * FROM dbms.memgal;
+
+INSERT INTO memgal VALUES('C:/Mem_Gal/Memory_Gallery/images/orca.jpg' , '28-04-2003', 'old room', 'First time adding image at 3:31 on this app')
+
+-----------------------------------------------------------------------
+
+Install my sql : https://dev.mysql.com/downloads/installer/
+
+for jar file : https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.28
+go to file -> project structure -> modules -> dependencies -> + -> mysql.jar
